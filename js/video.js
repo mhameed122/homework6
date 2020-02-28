@@ -1,11 +1,15 @@
 var video;
 
+
 function getVid(){
 	video = document.querySelector("#myVideo");
+	document.querySelector(".play").innerHTML='<img src="playicon.png" style="width: 40px">';
+	document.querySelector(".pause").innerHTML='<img src="pauseicon.jpg" style="width: 40px">';
 }
 
 function playVid() {
 	video.play();
+
 	vol = document.querySelector("#volume").innerHTML=video.volume*100 + "%";
 	console.log("Play Video");
 }
@@ -35,6 +39,7 @@ function skipAhead() {
 
 	if (video.currentTime >= 366) {
 		video.currentTime = 0;
+		video.playbackRate = 1
 	}
 }
 
